@@ -1,0 +1,49 @@
+.header {
+    background-image: url('/images/mobile-image-hero-1.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 22.5rem;
+    padding: 3rem 1.5rem;
+
+    nav {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        
+        span {
+            display: inline-block;
+            height: 0.125rem;
+            width: 1.25rem;
+            background-color: $white;
+            transition: background-color .3s ease-in-out;
+
+            &:not(:last-child) {
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        &:hover {
+            span {
+                background-color: $dark-gray;
+            }
+        }
+    }
+
+    &__logo {
+        height: 0.875rem;
+        color: $white;
+    }
+
+    &__mobile-menu {
+        display: none;
+        visibility: hidden;
+    }
+}
