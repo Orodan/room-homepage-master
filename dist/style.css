@@ -4,10 +4,20 @@ html {
           box-sizing: border-box;
 }
 
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
 body {
   font-size: 0.75rem;
   font-family: 'Spartan', sans-serif;
   margin: 0;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .header {
@@ -59,11 +69,78 @@ body {
 }
 
 .header__logo {
-  height: 0.875rem;
+  font-size: 1.25rem;
   color: white;
 }
 
 .header__mobile-menu {
   display: none;
   visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    background-image: url("/images/desktop-image-hero-1.jpg");
+    width: 52.5rem;
+    height: 33.375rem;
+    padding: 3.125rem 3.75rem;
+  }
+  .header nav {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__logo {
+    margin-right: 3.125rem;
+  }
+  .header__desktop-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 0.875rem;
+  }
+  .header__desktop-menu a {
+    position: relative;
+    height: 2.375rem;
+    line-height: 2.375rem;
+  }
+  .header__desktop-menu a::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: white;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+  }
+  .header__desktop-menu a:hover::before {
+    opacity: 1;
+  }
+  .header__desktop-menu a:not(:last-child) {
+    margin-right: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hide-for-mobile {
+    display: none;
+  }
 }

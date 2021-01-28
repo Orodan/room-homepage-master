@@ -38,12 +38,67 @@
     }
 
     &__logo {
-        height: 0.875rem;
+        font-size: 1.25rem;
         color: $white;
     }
 
     &__mobile-menu {
         display: none;
         visibility: hidden;
+    }
+}
+
+// Desktop
+
+@include breakpoint-up(large) {
+    .header {
+        background-image: url('/images/desktop-image-hero-1.jpg');
+        width: 52.5rem;
+        height: 33.375rem;
+        padding: 3.125rem 3.75rem;
+
+        nav {
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        &__logo {
+            margin-right: 3.125rem;
+        }
+
+        &__desktop-menu {
+            display: flex;
+            align-items: center;
+            color: $white;
+            text-decoration: none;
+            text-transform: lowercase;
+            font-size: 0.875rem;
+
+            a {
+                position: relative;
+                height: 2.375rem;
+                line-height: 2.375rem;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 2px;
+                    background-color: $white;
+                    opacity: 0;
+                    transition: opacity 300ms ease-in-out;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
+            }
+
+            a:not(:last-child) {
+                margin-right: 1.875rem;
+            }
+        }
     }
 }
