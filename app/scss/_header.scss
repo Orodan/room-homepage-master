@@ -42,24 +42,31 @@
         color: $white;
     }
 
+    &__desktop-menu {
+        display: none;
+    }
+
     &__mobile-menu {
         display: none;
         visibility: hidden;
     }
-}
+} 
 
 // Desktop
 
-@include breakpoint-up(large) {
+@include breakpoint-up(medium) {
     .header {
         background-image: url('/images/desktop-image-hero-1.jpg');
-        width: 52.5rem;
         height: 33.375rem;
         padding: 3.125rem 3.75rem;
 
         nav {
             justify-content: flex-start;
             align-items: center;
+        }
+
+        &__mobile-menu-button {
+            display: none;
         }
 
         &__logo {
@@ -99,6 +106,10 @@
             a:not(:last-child) {
                 margin-right: 1.875rem;
             }
+        }
+
+        &__mobile-menu {
+            display: none;
         }
     }
 }

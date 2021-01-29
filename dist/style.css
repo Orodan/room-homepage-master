@@ -12,7 +12,19 @@ html {
 body {
   font-size: 0.75rem;
   font-family: 'Spartan', sans-serif;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1440px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  body {
+    -ms-grid-columns: 1fr 600px;
+        grid-template-columns: 1fr 600px;
+  }
 }
 
 a, a:visited, a:hover {
@@ -73,15 +85,18 @@ a, a:visited, a:hover {
   color: white;
 }
 
+.header__desktop-menu {
+  display: none;
+}
+
 .header__mobile-menu {
   display: none;
   visibility: hidden;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .header {
     background-image: url("/images/desktop-image-hero-1.jpg");
-    width: 52.5rem;
     height: 33.375rem;
     padding: 3.125rem 3.75rem;
   }
@@ -92,6 +107,9 @@ a, a:visited, a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .header__mobile-menu-button {
+    display: none;
   }
   .header__logo {
     margin-right: 3.125rem;
@@ -130,6 +148,9 @@ a, a:visited, a:hover {
   }
   .header__desktop-menu a:not(:last-child) {
     margin-right: 1.875rem;
+  }
+  .header__mobile-menu {
+    display: none;
   }
 }
 
