@@ -128,11 +128,11 @@
     .header {
         background-image: url('/images/desktop-image-hero-1.jpg');
         height: 33.375rem;
-        padding: 3.125rem 3.75rem;
 
         nav {
             justify-content: flex-start;
             align-items: center;
+            padding: 3.125rem 3.75rem;
         }
 
         &__mobile-menu-button {
