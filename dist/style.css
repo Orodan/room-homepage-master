@@ -93,12 +93,22 @@ a, a:visited, a:hover {
   height: 0.125rem;
   width: 1.25rem;
   background-color: white;
-  -webkit-transition: background-color .3s ease-in-out;
-  transition: background-color .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .header__mobile-menu-button span:not(:last-child) {
   margin-bottom: 0.25rem;
+}
+
+.header__mobile-menu-button span:first-child {
+  -webkit-transform-origin: 5px 5px;
+          transform-origin: 5px 5px;
+}
+
+.header__mobile-menu-button span:last-child {
+  -webkit-transform-origin: 2px -4px;
+          transform-origin: 2px -4px;
 }
 
 .header__mobile-menu-button:hover span {
@@ -107,6 +117,20 @@ a, a:visited, a:hover {
 
 .header__mobile-menu-button.open span {
   background-color: #a1a1a1;
+}
+
+.header__mobile-menu-button.open > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header__mobile-menu-button.open > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__mobile-menu-button.open > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header__logo {

@@ -45,10 +45,18 @@
             height: 0.125rem;
             width: 1.25rem;
             background-color: $white;
-            transition: background-color .3s ease-in-out;
+            transition: all .3s ease-in-out;
 
             &:not(:last-child) {
                 margin-bottom: 0.25rem;
+            }
+
+            &:first-child {
+                transform-origin: 5px 5px;
+            }
+
+            &:last-child {
+                transform-origin: 2px -4px;
             }
         }
 
@@ -61,6 +69,18 @@
         &.open {
             span {
                 background-color: $dark-gray;
+            }
+
+            > span:first-child {
+                transform: rotate(45deg)
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg)
             }
         }
     }
