@@ -21,20 +21,24 @@
     background-size: cover;
     background-position: center center;
     height: 22.5rem;
-    padding: 3rem 1.5rem;
 
     nav {
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
+        padding: auto 1.5rem;
+        height: 7rem;
     }
 
     &__mobile-menu-button {
+        position: absolute;
         display: flex;
         flex-direction: column;
+        left: 1.5rem;
+        top: 3.125rem;
         cursor: pointer;
-        position: absolute;
-        left: 0;
+        z-index: 1;
         
         span {
             display: inline-block;
@@ -49,6 +53,12 @@
         }
 
         &:hover {
+            span {
+                background-color: $dark-gray;
+            }
+        }
+
+        &.open {
             span {
                 background-color: $dark-gray;
             }
@@ -68,10 +78,26 @@
         visibility: hidden;
         opacity: 0;
         transition: all 300ms ease-in-out;
-
+        height: 7rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 24px;
+        padding-left: 5.625rem;
+        background-color: $white;
+        place-items: center;
+        text-transform: lowercase;
+        
         &.open {
             visibility: visible;
             opacity: 1;
+        }
+
+        a {
+            color: $black;
         }
     }
 } 
