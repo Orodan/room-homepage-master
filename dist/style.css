@@ -260,6 +260,12 @@ a, a:visited, a:hover {
 }
 
 @media (min-width: 1024px) {
+  .header__slider-controls {
+    right: -6.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .hide-for-desktop {
     display: none;
   }
