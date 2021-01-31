@@ -179,8 +179,8 @@ a, a:visited, a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 56px;
-  width: 108px;
+  height: 3.5rem;
+  width: 6.75rem;
 }
 
 .header__slider-controls__item {
@@ -195,7 +195,7 @@ a, a:visited, a:hover {
 }
 
 .header__slider-controls__item img {
-  height: 20px;
+  height: 1.25rem;
 }
 
 @media (min-width: 640px) {
