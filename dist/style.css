@@ -172,6 +172,32 @@ a, a:visited, a:hover {
   color: black;
 }
 
+.header__slider-controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  width: 108px;
+}
+
+.header__slider-controls__item {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: black;
+  text-align: center;
+}
+
+.header__slider-controls__item img {
+  height: 20px;
+}
+
 @media (min-width: 640px) {
   .header {
     background-image: url("/images/desktop-image-hero-1.jpg");
