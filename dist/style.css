@@ -52,6 +52,7 @@ a, a:visited, a:hover {
 }
 
 .header {
+  position: relative;
   background-image: url("/images/mobile-image-hero-1.jpg");
   background-size: cover;
   background-position: center center;
