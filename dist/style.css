@@ -299,6 +299,12 @@ h1, h2, h3 {
   letter-spacing: 1.5px;
   color: black;
   letter-spacing: 10px;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.shop-now__link:hover, .shop-now__link:visited:hover {
+  opacity: .3;
 }
 
 .shop-now__link img, .shop-now__link:visited img {
