@@ -32,6 +32,10 @@ a, a:visited, a:hover {
   color: white;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 .overlay {
   position: absolute;
   left: 0;
@@ -270,6 +274,35 @@ a, a:visited, a:hover {
   .header__slider-controls {
     right: -6.75rem;
   }
+}
+
+.shop-now {
+  padding: 74px 36px;
+}
+
+.shop-now__title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.shop-now__content {
+  color: #a1a1a1;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 56px;
+}
+
+.shop-now__link, .shop-now__link:visited {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: black;
+  letter-spacing: 10px;
+}
+
+.shop-now__link img, .shop-now__link:visited img {
+  margin-left: 30px;
 }
 
 @media (min-width: 1024px) {
