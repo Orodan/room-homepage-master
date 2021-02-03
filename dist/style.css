@@ -182,6 +182,7 @@ a, a:visited, a:hover {
   display: flex;
   height: 3.5rem;
   width: 6.75rem;
+  cursor: pointer;
 }
 
 .header__slider-controls__item {
@@ -193,6 +194,12 @@ a, a:visited, a:hover {
           flex: 1;
   background-color: black;
   text-align: center;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.header__slider-controls__item:hover {
+  opacity: .7;
 }
 
 .header__slider-controls__item img {
