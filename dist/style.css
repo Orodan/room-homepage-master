@@ -312,6 +312,19 @@ h1, h2, h3 {
 }
 
 @media (min-width: 1024px) {
+  .shop-now {
+    padding: 122px 50px;
+  }
+  .shop-now__title {
+    font-size: 42px;
+    margin-bottom: 28px;
+  }
+  .shop-now__content {
+    margin-bottom: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
   .hide-for-desktop {
     display: none;
   }
