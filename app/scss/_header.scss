@@ -19,6 +19,7 @@
 .header {
     position: relative;
     height: 22.5rem;
+    overflow: hidden;
 
     &__images {
         display: flex;

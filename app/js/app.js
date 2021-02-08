@@ -21,11 +21,53 @@ mobileMenuBtn.addEventListener('click', () => {
 const sliderItemsContainer = document.querySelector('.header__images')
 const sliderControlLeft = document.querySelector('#slider-control-left')
 const sliderControlRight = document.querySelector('#slider-control-right')
-
 const sliderItemWidth = document.querySelector('#header').clientWidth
-console.log(sliderItemWidth)
 
-let currentWidthOffset = 0
+let currentWidthOffset = sliderItemWidth * -1
+
+const prependLeft = () => {
+    const lastSliderItem = document.querySelector('.header__image:last-child')
+
+    sliderItemsContainer.prepend(lastSliderItem)
+}
+
+const appendRight = () => {
+    const lastSliderItem = document.querySelector('.header__image:first-child')
+
+    sliderItemsContainer.append(lastSliderItem)
+}
+
+const moveLeft = () => {
+    sliderItemsContainer.style.transition = 'transform .3s ease-in-out'
+    sliderItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
+
+    currentWidthOffset += sliderItemWidth
+
+    setTimeout(() => {
+        prependLeft()
+
+        sliderItemsContainer.style.transition = 'none'
+        sliderItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
+
+        currentWidthOffset -= sliderItemWidth
+    }, 300)
+}
+
+const moveRight = () => {
+    sliderItemsContainer.style.transition = 'transform .3s ease-in-out'
+    sliderItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
+
+    currentWidthOffset -= sliderItemWidth
+
+    setTimeout(() => {
+        appendRight()
+
+        sliderItemsContainer.style.transition = 'none'
+        sliderItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
+
+        currentWidthOffset += sliderItemWidth
+    }, 300)
+}
 
 sliderControlLeft.addEventListener('click', () => {
     moveLeft()
@@ -35,20 +77,5 @@ sliderControlRight.addEventListener('click', () => {
     moveRight()
 })
 
-const moveLeft = () => {
-    console.log('move left')
-
-    sliderItemsContainer.style.transition = 'transform .3s ease-in-out'
-    sliderItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
-
-    currentWidthOffset += sliderItemWidth
-}
-
-const moveRight = () => {
-    console.log('move right')
-
-    sliderItemsContainer.style.transition = 'transform .3s ease-in-out'
-    sliderItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
-
-    currentWidthOffset -= sliderItemWidth
-}
+prependLeft()
+sliderItemsContainer.style.transform = `translateX(${currentWidthOffset}px)`
