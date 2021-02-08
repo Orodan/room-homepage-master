@@ -1,4 +1,4 @@
-console.log('ok')
+// Mobile menu
 
 const mobileMenuBtn = document.querySelector('#mobile-menu-button');
 const mobileMenu = document.querySelector('#mobile-menu');
@@ -15,3 +15,25 @@ mobileMenuBtn.addEventListener('click', () => {
         overlay.classList.add('open')
     }
 })
+
+// Slider
+
+const sliderImagesContainer = document.querySelector('.header__images')
+const sliderControlLeft = document.querySelector('#slider-control-left')
+const sliderControlRight = document.querySelector('#slider-control-right')
+
+sliderControlLeft.addEventListener('click', () => {
+    moveLeft()
+})
+
+sliderControlRight.addEventListener('click', () => {
+    moveRight()
+})
+
+const moveLeft = () => {
+    console.log('move left')
+}
+
+const moveRight = () => {
+    console.log('move right')
+}

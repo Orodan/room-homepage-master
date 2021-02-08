@@ -18,10 +18,31 @@
 
 .header {
     position: relative;
-    background-image: url('/images/mobile-image-hero-1.jpg');
-    background-size: cover;
-    background-position: center center;
     height: 22.5rem;
+
+    &__images {
+        display: flex;
+        height: 100%;
+    }
+
+    &__image-1, &__image-2, &__image-3 {
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        min-width: 100%;
+    }
+
+    &__image-1 {
+        background-image: url('/images/mobile-image-hero-1.jpg');   
+    }
+
+    &__image-2 {
+        background-image: url('/images/mobile-image-hero-2.jpg');
+    }
+
+    &__image-3 {
+        background-image: url('/images/mobile-image-hero-3.jpg');
+    }
 
     nav {
         position: relative;
@@ -154,7 +175,6 @@
 
 @include breakpoint-up(medium) {
     .header {
-        background-image: url('/images/desktop-image-hero-1.jpg');
         height: 33.375rem;
 
         nav {
