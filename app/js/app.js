@@ -18,12 +18,26 @@ mobileMenuBtn.addEventListener('click', () => {
 
 // Slider
 
+const getHeaderWidth = () => {
+    return document.querySelector('#header').clientWidth
+}
+
 const sliderItemsContainer = document.querySelector('.header__images')
 const sliderControlLeft = document.querySelector('#slider-control-left')
 const sliderControlRight = document.querySelector('#slider-control-right')
-const sliderItemWidth = document.querySelector('#header').clientWidth
-
+let sliderItemWidth = getHeaderWidth()
 let currentWidthOffset = sliderItemWidth * -1
+
+const onWindowResize = () => {
+    const currentHeaderWidth = getHeaderWidth()
+    sliderItemWidth = currentHeaderWidth
+    currentWidthOffset = sliderItemWidth * -1
+
+    sliderItemsContainer.style.transform = `translateX(${currentWidthOffset}px)`
+}
+
+window.onresize = onWindowResize
+
 
 const prependLeft = () => {
     const lastSliderItem = document.querySelector('.header__image:last-child')
