@@ -48,6 +48,7 @@ h1, h2, h3 {
   opacity: 0;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  z-index: 1;
 }
 
 .overlay.open {
@@ -62,10 +63,12 @@ h1, h2, h3 {
 }
 
 .header__images {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .header__image-1, .header__image-2, .header__image-3 {
@@ -98,8 +101,8 @@ h1, h2, h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: auto 1.5rem;
   height: 7rem;
+  z-index: 2;
 }
 
 .header__mobile-menu-button {
