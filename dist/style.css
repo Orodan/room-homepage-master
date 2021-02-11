@@ -294,6 +294,15 @@ h1, h2, h3 {
   .header__mobile-menu {
     display: none;
   }
+  .header__image-1 {
+    background-image: url("/images/desktop-image-hero-1.jpg");
+  }
+  .header__image-2 {
+    background-image: url("/images/desktop-image-hero-2.jpg");
+  }
+  .header__image-3 {
+    background-image: url("/images/desktop-image-hero-3.jpg");
+  }
 }
 
 @media (min-width: 1024px) {
