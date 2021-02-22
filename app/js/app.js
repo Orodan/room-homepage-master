@@ -28,10 +28,15 @@ const getShopNowWidth = () => {
 
 const shopNowItemsContainer = document.querySelector('.shop-now__items')
 const sliderItemsContainer = document.querySelector('.header__images')
+
 const sliderControlLeft = document.querySelector('#slider-control-left')
 const sliderControlRight = document.querySelector('#slider-control-right')
+
 let sliderItemWidth = getHeaderWidth()
+let shopNowSliderItemWidth = getShopNowWidth()
+
 let currentWidthOffset = sliderItemWidth * -1
+let currentShopNowWidthOffset = shopNowSliderItemWidth * -1
 
 const onWindowResize = () => {
     const currentHeaderWidth = getHeaderWidth()
@@ -68,9 +73,10 @@ const moveLeft = () => {
     sliderItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
 
     shopNowItemsContainer.style.transition = 'transform .3s ease-in-out'
-    shopNowItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
+    shopNowItemsContainer.style.transform = `translateX(${currentShopNowWidthOffset + shopNowSliderItemWidth}px)`
 
     currentWidthOffset += sliderItemWidth
+    currentShopNowWidthOffset += shopNowSliderItemWidth
 
     setTimeout(() => {
         prependLeft()
@@ -79,9 +85,10 @@ const moveLeft = () => {
         sliderItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
 
         shopNowItemsContainer.style.transition = 'none'
-        shopNowItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
+        shopNowItemsContainer.style.transform = `translateX(${currentShopNowWidthOffset - shopNowSliderItemWidth}px)`
 
         currentWidthOffset -= sliderItemWidth
+        currentShopNowWidthOffset -= shopNowSliderItemWidth
     }, 300)
 }
 
@@ -90,9 +97,10 @@ const moveRight = () => {
     sliderItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
 
     shopNowItemsContainer.style.transition = 'transform .3s ease-in-out'
-    shopNowItemsContainer.style.transform = `translateX(${currentWidthOffset - sliderItemWidth}px)`
+    shopNowItemsContainer.style.transform = `translateX(${currentShopNowWidthOffset - shopNowSliderItemWidth}px)`
 
     currentWidthOffset -= sliderItemWidth
+    currentShopNowWidthOffset -= shopNowSliderItemWidth
 
     setTimeout(() => {
         appendRight()
@@ -101,9 +109,10 @@ const moveRight = () => {
         sliderItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
 
         shopNowItemsContainer.style.transition = 'none'
-        shopNowItemsContainer.style.transform = `translateX(${currentWidthOffset + sliderItemWidth}px)`
+        shopNowItemsContainer.style.transform = `translateX(${currentShopNowWidthOffset + shopNowSliderItemWidth}px)`
 
         currentWidthOffset += sliderItemWidth
+        currentShopNowWidthOffset += shopNowSliderItemWidth
     }, 300)
 }
 
@@ -117,4 +126,4 @@ sliderControlRight.addEventListener('click', () => {
 
 prependLeft()
 sliderItemsContainer.style.transform = `translateX(${currentWidthOffset}px)`
-shopNowItemsContainer.style.transform = `translateX(${currentWidthOffset}px)`
+shopNowItemsContainer.style.transform = `translateX(${currentShopNowWidthOffset}px)`

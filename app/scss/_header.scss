@@ -20,7 +20,12 @@
 .header {
     position: relative;
     height: 22.5rem;
-    overflow: hidden;
+
+    &__images-container {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
 
     &__images {
         position: absolute;
@@ -155,6 +160,7 @@
         display: flex;
         height: 3.5rem;
         width: 6.75rem;
+        z-index: 2;
         cursor: pointer;
 
         &__item {

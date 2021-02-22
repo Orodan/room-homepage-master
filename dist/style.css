@@ -59,7 +59,12 @@ h1, h2, h3 {
 .header {
   position: relative;
   height: 22.5rem;
+}
+
+.header__images-container {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .header__images {
@@ -213,6 +218,7 @@ h1, h2, h3 {
   display: flex;
   height: 3.5rem;
   width: 6.75rem;
+  z-index: 2;
   cursor: pointer;
 }
 
@@ -358,7 +364,7 @@ h1, h2, h3 {
 }
 
 @media (min-width: 1024px) {
-  .shop-now {
+  .shop-now__item {
     padding: 7.625rem 3.125rem;
   }
   .shop-now__title {
