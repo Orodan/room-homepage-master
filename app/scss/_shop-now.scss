@@ -1,5 +1,14 @@
 .shop-now {
-    padding: 4.625rem 2.25rem;
+    overflow-x: hidden;
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+        min-width: 100%;
+        padding: 4.625rem 2.25rem;
+    }
 
     &__title {
         font-size: 2rem;
