@@ -1,5 +1,6 @@
 .shop-now {
     overflow-x: hidden;
+    grid-area: shop-now;
 
     &__items {
         display: flex;
@@ -44,7 +45,7 @@
 @include breakpoint-up(large) {
     .shop-now {
         &__item {
-            padding: 7.625rem 3.125rem;
+            padding: 7.425rem 3.125rem;
         }
 
         &__title {

@@ -10,6 +10,7 @@ html {
 body {
     font-size: 0.75rem;
     font-family: 'Spartan', sans-serif;
+    margin: 0;
 }
 
 a, a:visited, a:hover {
@@ -26,9 +27,18 @@ h1, h2, h3 {
     max-width: 1440px;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+        'header'
+        'shop-now'
+        'about'
+    ;
 
     @include breakpoint-up(large) {
         grid-template-columns: 1fr 600px;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: 33.375rem auto auto;
+        grid-template-areas:
+            'header shop-now'
+            'about about'
+        ;
     }
 }

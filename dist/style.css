@@ -12,6 +12,7 @@ html {
 body {
   font-size: 0.75rem;
   font-family: 'Spartan', sans-serif;
+  margin: 0;
 }
 
 a, a:visited, a:hover {
@@ -30,14 +31,16 @@ h1, h2, h3 {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+      grid-template-areas: 'header' 'shop-now' 'about';
 }
 
 @media (min-width: 1024px) {
   .container {
     -ms-grid-columns: 1fr 600px;
         grid-template-columns: 1fr 600px;
-    -ms-grid-rows: auto auto auto;
-        grid-template-rows: auto auto auto;
+    -ms-grid-rows: 33.375rem auto auto;
+        grid-template-rows: 33.375rem auto auto;
+        grid-template-areas: 'header shop-now' 'about about';
   }
 }
 
@@ -64,6 +67,9 @@ h1, h2, h3 {
 .header {
   position: relative;
   height: 22.5rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
 }
 
 .header__images-container {
@@ -324,6 +330,9 @@ h1, h2, h3 {
 
 .shop-now {
   overflow-x: hidden;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: shop-now;
 }
 
 .shop-now__items {
@@ -370,7 +379,7 @@ h1, h2, h3 {
 
 @media (min-width: 1024px) {
   .shop-now__item {
-    padding: 7.625rem 3.125rem;
+    padding: 7.425rem 3.125rem;
   }
   .shop-now__title {
     font-size: 2.625rem;
@@ -389,6 +398,9 @@ h1, h2, h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: about;
 }
 
 .about__img {
@@ -413,7 +425,7 @@ h1, h2, h3 {
   line-height: 1.6;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .about {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

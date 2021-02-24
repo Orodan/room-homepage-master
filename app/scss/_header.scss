@@ -20,6 +20,7 @@
 .header {
     position: relative;
     height: 22.5rem;
+    grid-area: header;
 
     &__images-container {
         position: relative;

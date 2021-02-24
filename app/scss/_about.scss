@@ -1,6 +1,7 @@
 .about {
     display: flex;
     flex-direction: column;
+    grid-area: about;
 
     &__img {
         width: 100%;
@@ -25,7 +26,7 @@
     }
 }
 
-@include breakpoint-up(medium) {
+@include breakpoint-up(large) {
     .about {
         flex-direction: row;
     }
